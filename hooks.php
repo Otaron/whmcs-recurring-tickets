@@ -3,7 +3,7 @@
 use WHMCS\Database\Capsule;
 
 //Check everyday if a recurring ticket is due
-add_hook('AfterCronJob', 1, function($vars) {
+add_hook('DailyCronJob', 1, function($vars) {
     logActivity('Checking recurring tickets');
     $tickets = Capsule::table('mod_recurring_tickets')->get();
     
